@@ -17,9 +17,9 @@ def get_stacks(data):
         row = row + 1
 
     stacks = []
-    row = row-1
+    row = row - 1
     c = 0
-    while row >=0:
+    while row >= 0:
         
         for i in range(1, len(data[row]), 4):
             if int(i/4) + 1 > len(stacks):
@@ -37,12 +37,12 @@ def get_nums(s):
     return int(s[1]), int(s[3]), int(s[5].strip('\n'))
 
 def operation1(stacks, a, b, c):
-    while a!=0:
+    while a != 0:
         item = stacks[b-1].pop()
         stacks[c-1].append(item)
-        a = a-1
+        a = a - 1
 
-def operation2(stacks, a, b,c):
+def operation2(stacks, a, b ,c):
     item = stacks[b-1][-a:]
     while a!=0:
         stacks[b-1].pop()
@@ -67,6 +67,6 @@ print("answer1", stacks)
 stacks = get_stacks(data)
 for d in range(m, len(data)):
     a, b, c = get_nums(data[d])
-    operation2(stacks, a, b ,c)
+    operation2(stacks, a, b, c)
 
 print("answer2", stacks)
